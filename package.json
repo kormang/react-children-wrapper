@@ -1,7 +1,7 @@
 {
   "name": "react-children-wrapper",
   "version": "1.0.0",
-  "description": "Wraps children one into another to resolve React Provider Hell",
+  "description": "Resolves React Provider Hell by wrapping children one into another",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "exports": "./dist/esm/index.js",
