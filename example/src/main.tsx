@@ -12,11 +12,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ChildrenWrapper>
       <ChakraProvider />
-      <Provider store={store}>
-        {/* We need at least some children here to satisfy typescript compiler,
-        because redux Provider requires children. */}
-        <></>
-      </Provider>
+      <Provider store={store}>.</Provider>
       <App />
     </ChildrenWrapper>
   </React.StrictMode>

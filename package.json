@@ -1,15 +1,19 @@
 {
   "name": "react-children-wrapper",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "description": "Resolves React Provider Hell by wrapping children one into another",
   "main": "./dist/cjs/index.js",
+  "esnext:main": "./dist/esm/index.js",
   "module": "./dist/esm/index.js",
-  "exports": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:esm": "tsc --module esnext --outDir dist/esm --target esnext",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs --target es2015",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
