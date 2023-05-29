@@ -4,7 +4,7 @@ Resolve React Provider Hell
 
 Turn this code:
 
-```(JavaScript)
+```JavaScript
 <AppContext.AppProvider
   value={{
   ...this.setStateData(AppContext.CONTEXT_ID, AppContext.stateData),
@@ -34,7 +34,7 @@ Turn this code:
 
 into this:
 
-```(JavaScript)
+```JavaScript
 <ChildrenWrapper>
   <CPAppContext.AppProvider
     value={{
@@ -58,10 +58,9 @@ into this:
 </ChildrenWrapper>
 ```
 
-*For privider that require some children you can provide simple dot (.) as child, it will be overriden by next sibiling anyway.*
+_For privider that require some children you can provide simple dot (.) as child, it will be overriden by next sibiling anyway._
 
 `ChildrenWrapper` turns converts flat hierarchy as if siblings had actually parent-child relations ship. Real children are disacred, except for last sibling, it retains its children. See the source code, it is simple.
-
 
 # How to use it?
 
@@ -69,14 +68,14 @@ Copy the code from `src/index.ts` or install the package with `yarn add react-ch
 
 Import the component.
 
-```(JavaScript)
+```JavaScript
 import ChildrenWrapper from 'react-children-wrapper'
 ```
 
 Transform your code like this:
 This...
 
-```(JavaScript)
+```JavaScript
   <ChakraProvider>
     <Provider store={store}>
       <App />
@@ -86,7 +85,7 @@ This...
 
 ...into this
 
-```(JavaScript)
+```JavaScript
     <ChildrenWrapper>
       <ChakraProvider />
       <Provider store={store}>.</Provider>
